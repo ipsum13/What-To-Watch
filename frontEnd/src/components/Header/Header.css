@@ -1,0 +1,38 @@
+.rmdb-header {
+    width: 100%;
+    height: auto;
+    background:transparent;
+    padding: 0 20px;
+    box-sizing: border-box;
+    box-shadow: 0 0 15px gray;
+    margin-bottom: 20px;
+  }
+  
+  .rmdb-header-content {
+    
+    height: auto;
+    padding: 10px 0px;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  
+  .logo {
+    width: 150px;
+    height: 70px;
+    margin-top: 0;
+
+  }
+  
+  
+  @media screen and (max-width: 500px) {
+    .rmdb-header-content {
+      display: grid
+    }
+    .logout {
+margin-top: 2vh;
+    }
+    .logo {
+      width: 150px;
+      margin-top: 5px;
+    }
+  }
