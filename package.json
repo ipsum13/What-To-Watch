@@ -4,6 +4,8 @@
   "description": "Full Stack app to search movies and save liked movies in the database",
   "main": "index.js",
   "scripts": {
+    "build": "cd client && npm run build",
+    "install": "cd client && npm install",
     "client": "npm start --prefix client",
     "server": "npm run server --prefix server",
     "start": "concurrently \"npm run client\" \"npm run server\"",
