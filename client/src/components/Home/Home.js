@@ -1,5 +1,4 @@
 import React, { Component, Fragment } from "react";
-import { connect } from "react-redux";
 import MovieCarousel from "../MovieCarousel/MovieCarousel";
 import MovieCard from "../MovieCard/MovieCard";
 import Spinner from "../Spinner/Spinner";
@@ -201,8 +200,6 @@ class Home extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({
-  auth: state.auth,
-});
+
 
 export default Home;

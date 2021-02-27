@@ -87,7 +87,7 @@ router.post(
 
       jwt.sign(
         payload,
-        config.get("JWT_SECRET"),
+        process.env.JWT_SECRET,
         { expiresIn: 360000 },
         (err, token) => {
           if (err) throw err;
@@ -142,7 +142,7 @@ router.post(
 
       jwt.sign(
         payload,
-        config.get("JWT_SECRET"),
+        process.env.JWT_SECRET,
         { expiresIn: 360000 },
         (err, token) => {
           if (err) throw err;
@@ -161,7 +161,7 @@ const client = new OAuth2Client(config.get("GOOGLE_CLIENT_ID"));
 router.post('/google-login', (req, res) => {
   const { idToken } = req.body;
 
-    client.verifyIdToken({ idToken, audience: config.get("GOOGLE_CLIENT_ID") }).then(response => {
+    client.verifyIdToken({ idToken, audience: process.env.GOOGLE_CLIENT_ID }).then(response => {
         // console.log('GOOGLE LOGIN RESPONSE',response)
         const { email_verified, name, email, imageUrl } = response.payload;
         if (email_verified) {
@@ -172,7 +172,7 @@ router.post('/google-login', (req, res) => {
                       id: user._id,
                     },
                   };
-                    const token = jwt.sign( payload, config.get("JWT_SECRET"), { expiresIn: 360000 });
+                    const token = jwt.sign( payload, process.env.JWT_SECRET, { expiresIn: 360000 });
                     const { _id, email, name } = user;
                     return res.status(200).json({
                         token,
@@ -200,7 +200,7 @@ router.post('/google-login', (req, res) => {
                                 msg: 'User signup failed with google'
                             });
                         }
-                        const token = jwt.sign({ _id: data._id }, config.get("JWT_SECRET"), { expiresIn: 360000 });
+                        const token = jwt.sign({ _id: data._id }, process.env.JWT_SECRET, { expiresIn: 360000 });
                         const { _id, email, name } = data;
                         return res.status(200).json({
                             token,
