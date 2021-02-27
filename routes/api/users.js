@@ -5,7 +5,7 @@ const gravatar = require("gravatar");
 const normalize = require("normalize-url");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-const config = require("config");
+
 const { check, validationResult } = require("express-validator");
 
 const _ = require('lodash');
@@ -157,7 +157,7 @@ router.post(
 );
 
 
-const client = new OAuth2Client(config.get("GOOGLE_CLIENT_ID"));
+const client = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
 router.post('/google-login', (req, res) => {
   const { idToken } = req.body;
 
@@ -179,7 +179,7 @@ router.post('/google-login', (req, res) => {
                         user: { _id, email, name }
                     });
                 } else {
-                    let password = email + config.get("JWT_SECRET");
+                    let password = email + process.env.JWT_SECRET;
                     const avatar = normalize(
                       gravatar.url(email, {
                         s: "200",

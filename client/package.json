@@ -9,19 +9,14 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
-    "antd": "^4.0.3",
     "axios": "^0.19.2",
-    "bloodhound-js": "^1.2.3",
     "bootstrap": "^4.4.1",
     "cogo-toast": "^4.2.3",
     "jquery": "^3.5.0",
     "react": "^16.13.1",
-    "react-autosuggest": "^10.0.0",
     "react-bootstrap": "^1.0.0",
     "react-bootstrap-typeahead": "^4.2.2",
     "react-dom": "^16.13.1",
-    "react-fontawesome": "^1.7.1",
-    "react-loader-spinner": "^3.1.5",
     "react-multi-carousel": "^2.5.4",
     "react-redux": "^7.2.0",
     "react-responsive-embed": "^2.1.0",
@@ -31,8 +26,7 @@
     "redux": "^4.0.5",
     "redux-devtools-extension": "^2.13.8",
     "redux-thunk": "^2.3.0",
-    "styled-components": "^5.0.1",
-    "typeahead": "^0.2.2"
+    "styled-components": "^5.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -56,7 +50,5 @@
     ]
   },
   "proxy": "http://localhost:5000",
-  "devDependencies": {
-    "nodemon": "^2.0.3"
-  }
+  "devDependencies": {}
 }
